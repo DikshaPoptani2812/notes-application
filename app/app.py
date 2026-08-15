@@ -107,7 +107,7 @@ def list_notes():
 @app.post("/notes")
 def add_note():
     if API_KEY and request.headers.get("X-API-Key") != API_KEY:
-        return jsonify({"error": "missing or wrong X-API-Keys"}), 401
+        return jsonify({"error": "test-change missing or wrong X-API-Keys"}), 401
     text = (request.get_json(silent=True) or {}).get("text", "").strip()
     if not text:
         return jsonify({"error": "text is required"}), 400
